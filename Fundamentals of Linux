@@ -1,0 +1,15 @@
+Linux Kernel is the main component in Linux operating system and it interacts between a computer's hardware and its process.
+
+Kernel exists within the OS and controls major functions of the hardware like server, laptop or any kind of computer.
+
+What the Kernel does ?
+
+The Kernel has 4 jobs:
+
+Memory Management: Keeps track of how much memory is used to store what and where.
+
+Process Management: Determine which process can use the CPU (central processing unit) when and for how long.
+
+Device Drivers: Act as the mediator/interpreter between the hardware and the process.
+
+System calls and Security: Receive request from service for the process.
