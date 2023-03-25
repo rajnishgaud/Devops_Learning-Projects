@@ -1,0 +1,27 @@
+Directory Commands:
+
+cd --> Change directory
+
+cd ~ --> Change directory to home
+
+cd / --> Change directory to root path
+
+cd .. --> Change directory to step back
+
+cd ../.. --> Change directory to 2 step back
+
+pwd --> Present working directory
+
+mkdir folder --> # to make a new folder
+
+toch file --> # to make new file
+
+mkdir /folder/Devops --> # to make new folder in specific location
+
+touch /folder/code.txt --> # to make new file "code.txt" in specific location
+
+mkdir one two three four --> # to make multiple folder at once
+
+touch Apple Ball Cat Dog --> # to make multiple file at once
+
+mkdir -p A/B/C/D/E --> # to make nested directory (one folder inside another folder)
