@@ -1,0 +1,17 @@
+Basic Commands in Linux:
+
+ls --> list files and directories
+
+ls -l --> list files and directories in long listing format
+
+ls -a --> list files and directories with hidden files & directories
+
+ls -la --> list all files and directories including hidden files and directory
+
+ls -i --> list files and directories with index number and inode number
+
+ls -lr --> list files and directories with reverse order
+
+ls -lrt --> list files and directories with long listing, reverse order and modification time
+
+ls -lrth --> list files and directories with long listing, reverse order, modification time and human readable format.
