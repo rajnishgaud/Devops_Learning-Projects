@@ -1,0 +1,117 @@
+To view what's written in a file.
+ ubuntu@ip-172-31-46-117:/$ cat devfile.txt
+ I will become Devops Engineer
+
+To change the access permissions of files.
+ ubuntu@ip-172-31-46-117:/$ ls -l devfile.txt 
+ -rw-r--r-- 1 root root 40 Mar 22 14:44 devfile.txt
+ ubuntu@ip-172-31-46-117:/$ chmod 744 devfile.txt 
+ chmod: changing permissions of 'devfile.txt': Operation not permitted
+ ubuntu@ip-172-31-46-117:/$ sudo chmod 744 devfile.txt 
+ ubuntu@ip-172-31-46-117:/$ ls -l devfile.txt 
+ -rwxr--r-- 1 root root 40 Mar 22 14:44 devfile.txt
+
+To check which commands you have run to remove a directory/ Folder.
+ubuntu@ip-172-31-46-117:/testfolder$ ls
+dell  lenovo.txt
+ubuntu@ip-172-31-46-117:/testfolder$ sudo rmdir dell
+ubuntu@ip-172-31-46-117:/testfolder$ ls
+lenovo.txt
+
+To create a fruits.txt file and to view the content.
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo touch fruits.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ ls
+ apple  fruits.txt  lenovo.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ ls -l
+ total 4
+ drwxr-xr-x 2 root root 4096 Mar 25 20:08 apple
+ -rw-r--r-- 1 root root    0 Mar 25 20:13 fruits.txt
+ -rw-r--r-- 1 root root    0 Mar 25 20:03 lenovo.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ echo "I like to eat fruits very much" > fruits.txt 
+ -bash: fruits.txt: Permission denied
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo chmod 744 fruits.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ ls
+ apple  fruits.txt  lenovo.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ echo "I like to eat fruits very much" > fruits.txt 
+ -bash: fruits.txt: Permission denied
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo chmod 766 fruits.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ ls -l
+ total 4
+ drwxr-xr-x 2 root root 4096 Mar 25 20:08 apple
+ -rwxrw-rw- 1 root root    0 Mar 25 20:13 fruits.txt
+ -rw-r--r-- 1 root root    0 Mar 25 20:03 lenovo.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ echo "I like to eat fruits very much" > fruits.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ cat fruits.txt 
+ I like to eat fruits very much
+
+Add content in devops.txt (One in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava.
+ ubuntu@ip-172-31-46-117:/testfolder$ vi devops.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ cat devops.txt 
+ Apple 
+ Mango 
+ Banana 
+ Orange 
+ Cherry 
+ Guava
+
+To Show only top three fruits from the file.
+ ubuntu@ip-172-31-46-117:/testfolder$ cat devops.txt 
+ Apple 
+ Mango 
+ Banana 
+ Orange 
+ Cherry 
+ Guava
+ ubuntu@ip-172-31-46-117:/testfolder$ head -3 devops.txt 
+ Apple 
+ Mango 
+ Banana
+
+To Show only bottom three fruits from the file.
+ ubuntu@ip-172-31-46-117:/testfolder$ tail -3 devops.txt 
+ Orange 
+ Cherry 
+ Guava
+
+To create another file Colors.txt and to view the content.
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo touch colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo chmod 646 colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ ls -l
+ total 12
+ drwxr-xr-x 2 root root 4096 Mar 25 20:08 apple
+ -rw-r--rw- 1 root root    0 Mar 25 20:36 colours.txt
+ -rw-r--rw- 1 root root   44 Mar 25 20:23 devops.txt
+ -rwxrw-rw- 1 root root   31 Mar 25 20:15 fruits.txt
+ -rw-r--r-- 1 root root    0 Mar 25 20:03 lenovo.txt
+ ubuntu@ip-172-31-46-117:/testfolder$ vi colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ cat colours.txt 
+ I like to see diffrenet colours in pictures
+
+Add content in Colors.txt (One in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey.
+ ubuntu@ip-172-31-46-117:/testfolder$ vi colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo echo"Red Pink White Blue Green" >> colours.txt 
+ sudo: echoRed Pink White Blue Green: command not found
+ ubuntu@ip-172-31-46-117:/testfolder$ sudo echo "Red Pink White Blue Green" >> colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ cat colours.txt 
+ I like to see diffrenet colours in pictures
+ Red Pink White Blue Green
+ ubuntu@ip-172-31-46-117:/testfolder$ vi colours.txt 
+ ubuntu@ip-172-31-46-117:/testfolder$ cat colours.txt 
+ I like to see diffrenet colours in pictures
+ Red 
+ Pink 
+ White 
+ Blue 
+ Green
+
+To find the difference between fruits.txt and Colors.txt file.
+ ubuntu@ip-172-31-46-117:/testfolder$ diff colours.txt fruits.txt 
+ 1,6c1
+ < I like to see diffrenet colours in pictures
+ < Red 
+ < Pink 
+ < White 
+ < Blue 
+ < Green
+ ---
+ > I like to eat fruits very much
